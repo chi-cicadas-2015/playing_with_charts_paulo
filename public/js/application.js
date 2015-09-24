@@ -10,7 +10,9 @@ $(document).ready(function() {
 
 function create_chart (click_selector, it_to_put_it) {
 
-  $("#main_container").on("click",click_selector, function () {
+  $("#main_container").on("click",click_selector, function (event) {
+
+    event.preventDefault();
 
     var request = $.ajax({
       method: "get",

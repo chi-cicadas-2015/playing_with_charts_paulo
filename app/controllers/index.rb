@@ -1,6 +1,6 @@
 get '/' do
 
-  logger.info "here now"
+  logger.info "here now /charts/1"
 
   if request.xhr?
 
@@ -8,36 +8,38 @@ get '/' do
 
     @data = {
         chart: {
-            type: 'bar'
+            type: 'line'
         },
-        title: {
-            text: 'Fruit Consumption'
-        },
+        title: { text: 'Maddies Meanness Over Time' },
+            # text: 'Maddie - Meanness Over Time'
+
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+          # these are rows
+            title: {text: 'Wooooooo'},
+            type: 'datetime',
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
         yAxis: {
+          # these are columns
             title: {
-                text: 'Fruit eaten'
+                text: 'Whats up'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
+            name: 'Maddie',
+            data: [0, 2000, 8000, -2000,3000,4000,3000,2000,4000,4000],
         }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'PD',
+            data: [1,1,1,1,1,1,1,1,1,1]
         }]
     }
 
     @data.to_json
 
-    # erb :index, layout: false, locals: {data: @data}
-
+    erb :index
   else
     erb :index
+
   end
 
-
 end
-# {"chart":{"type":"bar"},"title":{"text":"Fruit Consumption"},"xAxis":{"categories":["Apples","Bananas","Oranges"]},"yAxis":{"title":{"text":"Fruit eaten"}},"series":[{"name":"Jane","data":[1,0,4]},{"name":"John","data":[5,7,3]}]}
