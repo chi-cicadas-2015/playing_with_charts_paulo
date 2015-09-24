@@ -14,14 +14,16 @@ function create_chart (click_selector, it_to_put_it) {
 
     event.preventDefault();
 
+    var url = $(click_selector).attr("href");
+
     var request = $.ajax({
       method: "get",
-      url: "/"
+      url: url
     });
 
     request.done(function(response){
 
-      var j = JSON.parse(response)
+      var j = JSON.parse(response);
 
       $(it_to_put_it).highcharts(j);
 
