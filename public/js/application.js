@@ -1,18 +1,20 @@
 $(document).ready(function() {
 
-  show_charts();
-
   create_chart("#chart1", "#container1");
-  create_chart("#chart2", "#container2");
+  create_chart("#chart2", "#container1");
+  create_chart("#chart3", "#container1");
 
 });
 
 
-function create_chart (click_selector, it_to_put_it) {
+function create_chart (click_selector, id_to_put_it) {
 
   $("#main_container").on("click",click_selector, function (event) {
 
     event.preventDefault();
+
+    reset_charts();
+    $(id_to_put_it).show();
 
     var url = $(click_selector).attr("href");
 
@@ -25,12 +27,14 @@ function create_chart (click_selector, it_to_put_it) {
 
       var j = JSON.parse(response);
 
-      $(it_to_put_it).highcharts(j);
+      $(id_to_put_it).highcharts(j);
 
     });
 
     request.fail( function( response ){
+
       console.log("failure")
+
     })
 
   });
@@ -39,11 +43,5 @@ function create_chart (click_selector, it_to_put_it) {
 
 
 function reset_charts () {
-  $("#container1").hide();
-  $("#container2").hide();
-}
-
-function show_charts () {
-  $("#container1").show();
-  $("#container2").show();
-}
+  $("#graphs").children().hide();
+};
