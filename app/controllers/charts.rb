@@ -2,15 +2,30 @@ get '/charts' do
 
   # "awesome"
 
-  # @chart = HighChart.new(options={
-  #             :***le_text => "Test ***le",
-  #             :series_data =>
-  #             {
-  #             'Calvin' => [10, 2, 17],
-  #             'Hobbes' => [11, 14, 6]
-  #             }
-  #           }
-  #         )
+  # @data = {
+  #     chart: {
+  #         type: 'bar'
+  #     },
+  #     title: {
+  #         text: 'Fruit Consumption'
+  #     },
+  #     xAxis: {
+  #         categories: ['Apples', 'Bananas', 'Oranges']
+  #     },
+  #     yAxis: {
+  #         title: {
+  #             text: 'Fruit eaten'
+  #         }
+  #     },
+  #     series: [{
+  #         name: 'Jane',
+  #         data: [1, 0, 4]
+  #     }, {
+  #         name: 'John',
+  #         data: [5, 7, 3]
+  #     }]
+  # }
 
-  erb :index
+
+  # erb :index
 end
