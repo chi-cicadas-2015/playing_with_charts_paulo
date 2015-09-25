@@ -46,6 +46,7 @@ charts = [["Looks1", {chart: {
     series: [{
         name: 'Kelsey',
         data: [0],
+        color: "#F1BCAB"
     }, {
         name: 'Paulo',
         data: [100],
