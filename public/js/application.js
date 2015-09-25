@@ -1,35 +1,43 @@
 $(document).ready(function() {
 
-  create_chart("#chart1", "#container1");
-  create_chart("#chart2", "#container1");
-  create_chart("#chart3", "#container1");
-  create_chart("#chart4", "#container1");
-  create_chart("#chart5", "#container1");
+  clicable_links();
 
 });
 
 
-function create_chart (click_selector, id_to_put_it) {
+function clicable_links () {
+  $("nav a").on("click", function(){
+    console.log($(this).attr("id"));
+
+    var id = $(this).attr("id");
+
+    create_chart("#" + id);
+
+  })
+};
+
+function create_chart (click_selector) {
 
   $("#main_container").on("click",click_selector, function (event) {
 
     event.preventDefault();
 
     reset_charts();
-    $(id_to_put_it).show();
+    $("#container1").show();
 
     var url = $(click_selector).attr("href");
+    var id = $(click_selector).attr("id");
 
     var request = $.ajax({
       method: "get",
-      url: url
+      url: url,
     });
 
     request.done(function(response){
 
       var j = JSON.parse(response);
 
-      $(id_to_put_it).highcharts(j);
+      $("#container1").highcharts(j);
 
     });
 

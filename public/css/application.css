@@ -1,4 +1,9 @@
+nav {
+  margin-left: 20%;
+}
+
 .link_button {
   margin: auto;
   padding: 2em;
+  display: inline-block;
 }
