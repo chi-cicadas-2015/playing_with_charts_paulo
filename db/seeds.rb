@@ -1,4 +1,4 @@
-charts = [{chart: {
+charts = [["Looks1", {chart: {
         type: 'column'
     },
     title: { text: 'Looks I Get - Anywhere', size: 30 },
@@ -24,9 +24,9 @@ charts = [{chart: {
         name: 'Paulo',
         data: [1]
     }]
-},
+}],
 
-{chart: {
+["Looks2",{chart: {
         type: 'column'
     },
     title: { text: 'Looks I Get - Boystown', size: 30 },
@@ -51,8 +51,8 @@ charts = [{chart: {
         data: [100],
         color: "#94B8FF"
     }]
-},
-{chart: {
+}],
+["Cat",{chart: {
         type: 'column',
     },
 
@@ -76,9 +76,9 @@ charts = [{chart: {
         color: '#66E0A3',
     }],
 
-},
+}],
 
-{chart: {
+["THU",{chart: {
         type: 'pie',
     },
 
@@ -95,8 +95,8 @@ charts = [{chart: {
 
                {name: "Work", y: 0.6, color: "#FFFF99" }]
     }]
-},
-{chart: {
+}],
+["Mean",{chart: {
         type: 'line'
     },
     title: { text: 'Maddies Meanness Over Time' , size: 30},
@@ -121,9 +121,8 @@ charts = [{chart: {
         name: 'PD',
         data: [1,1,1,1,1,1,1,1,1,1]
     }]
-}
-]
+}]]
 
 charts.each do |c|
-  Chart.create(chart_data: c.to_json)
+  Chart.create(chart_name: c[0] ,chart_data: c[1].to_json)
 end
