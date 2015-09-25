@@ -29,22 +29,24 @@ get '/stocks' do
 
 
   @chart = {chart: {type: 'line'},
-      title: { text: 'Maddies Meanness Over Time' , size: 30},
+      title: { text: "#{params[:stock_symbol]} - Closing Price" , size: 30},
       xAxis: {
         # these are column
-          title: {text: 'Wooooooo'},
+          title: {text: 'Price'},
           type: 'datetime',
-          categories: ['Jan', 'Feb', 'Mar']
+          categories: temp[:date]
       },
       yAxis: {
         # these are rows
-          title: {text: 'Whats up'}},
-            series: [{name: 'Maddie', data: [0, 2000, 8000]},
-                     {name: 'Paulo', data: [1,1,1]}
+          title: {text: '$ Dollars'}},
+            series: [{name: "#{params[:stock_symbol]}",
+                      data: temp[:close],
+                      color: "#66E0A3"}
+
   ]}
 
 
-  @chart.to_s
+  @chart.to_json
 
   # @response = {chart: {type: 'line'},
   #     title: { text: 'Maddies Meanness Over Time' , size: 30},
