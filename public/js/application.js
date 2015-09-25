@@ -80,7 +80,13 @@ function get_stock () {
       var j = JSON.parse(response);
 
       console.log("done")
-      console.log(j)
+      console.log(response)
+
+      $("#stock_container").text("yeah");
+
+      $("#stock_container").highcharts(j);
+
+
     });
 
 
