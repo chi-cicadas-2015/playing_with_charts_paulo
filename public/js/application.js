@@ -64,16 +64,21 @@ function get_stock () {
 
     var url = $("#stocks_form").attr('action');
 
-    var seri = $("#stocks_form").serialize();
+    var data = $("#stocks_form").serialize();
 
     console.log(url);
-    console.log(seri);
+    console.log(data);
 
-    // var request = $.ajax({
-    //   method: "get",
-    //   // url: url
-    //
-    // })
+    var request = $.ajax({
+      method: "get",
+      url: url,
+      data: data
+    })
+
+    request.done(function(response){
+      console.log("done")
+      console.log(response)
+    });
 
 
 
