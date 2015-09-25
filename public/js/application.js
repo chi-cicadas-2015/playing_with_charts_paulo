@@ -66,8 +66,8 @@ function get_stock () {
 
     var data = $("#stocks_form").serialize();
 
-    console.log(url);
-    console.log(data);
+    // console.log(url);
+    // console.log(data);
 
     var request = $.ajax({
       method: "get",
@@ -76,10 +76,19 @@ function get_stock () {
     })
 
     request.done(function(response){
+
+      var j = JSON.parse(response);
+
       console.log("done")
-      console.log(response)
+      console.log(j)
     });
 
+
+    request.fail( function( response ){
+
+      console.log("failure")
+
+    })
 
 
   })

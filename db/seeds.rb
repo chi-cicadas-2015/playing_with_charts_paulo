@@ -125,5 +125,5 @@ charts = [["Looks1", {chart: {
 }]]
 
 charts.each do |c|
-  Chart.create(chart_name: c[0] ,chart_data: c[1].to_json)
+  Chart.create(chart_name: c[0] , chart_data: c[1].to_json)
 end
