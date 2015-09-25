@@ -19,6 +19,7 @@ charts = [{chart: {
     series: [{
         name: 'Kelsey',
         data: [40],
+        color: "#F1BCAB"
     }, {
         name: 'Paulo',
         data: [1]
@@ -47,7 +48,8 @@ charts = [{chart: {
         data: [0],
     }, {
         name: 'Paulo',
-        data: [100]
+        data: [100],
+        color: "#94B8FF"
     }]
 },
 {chart: {
@@ -83,7 +85,7 @@ charts = [{chart: {
     title: { text: 'Work Thursday' , size: 30},
 
     series: [{
-        name: "Brands",
+        name: "Work",
         colorByPoint: true,
         data: [{name: "Not Work",
                 y: 24.03,
@@ -93,7 +95,34 @@ charts = [{chart: {
 
                {name: "Work", y: 0.6, color: "#FFFF99" }]
     }]
-}]
+},
+{chart: {
+        type: 'line'
+    },
+    title: { text: 'Maddies Meanness Over Time' , size: 30},
+        # text: 'Maddie - Meanness Over Time'
+
+    xAxis: {
+      # these are rows
+        title: {text: 'Wooooooo'},
+        type: 'datetime',
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    },
+    yAxis: {
+      # these are columns
+        title: {
+            text: 'Whats up'
+        }
+    },
+    series: [{
+        name: 'Maddie',
+        data: [0, 2000, 8000, -2000,3000,4000,3000,2000,4000,4000],
+    }, {
+        name: 'PD',
+        data: [1,1,1,1,1,1,1,1,1,1]
+    }]
+}
+]
 
 charts.each do |c|
   Chart.create(chart_data: c.to_json)

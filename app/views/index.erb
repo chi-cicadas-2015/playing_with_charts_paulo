@@ -4,11 +4,21 @@
     <a id="chart1" href="/charts/1">Maddie</a>
   </div> -->
 
-  <div class="link_button">
-    <a id="chart2" href="/charts/2">Looks1</a>
-  </div>
 
-  <div class="link_button">
+
+  <% @charts.each do |c| %>
+    <div class="link_button">
+      <a id="<%= c.id %>" href="/charts/<%= c.id %>"> <%= c.id %> </a>
+    </div>
+  <% end %>
+
+
+
+
+    <!-- <a id="chart2" href="/charts/2">Looks1</a> -->
+
+
+  <!-- <div class="link_button">
     <a id="chart3" href="/charts/3">Looks2</a>
   </div>
 
@@ -18,7 +28,7 @@
 
   <div class="link_button">
     <a id="chart5" href="/charts/5">Work</a>
-  </div>
+  </div> -->
 
   <div id="graphs">
 
