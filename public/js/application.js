@@ -3,6 +3,8 @@ $(document).ready(function() {
   create_chart("#chart1", "#container1");
   create_chart("#chart2", "#container1");
   create_chart("#chart3", "#container1");
+  create_chart("#chart4", "#container1");
+  create_chart("#chart5", "#container1");
 
 });
 
