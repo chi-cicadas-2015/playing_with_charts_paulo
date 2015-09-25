@@ -10,6 +10,7 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+require 'yahoo_stock'
 
 require 'pg'
 require 'active_record'

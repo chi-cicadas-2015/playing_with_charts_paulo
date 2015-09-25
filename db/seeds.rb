@@ -46,6 +46,7 @@ charts = [["Looks1", {chart: {
     series: [{
         name: 'Kelsey',
         data: [0],
+        color: "#F1BCAB"
     }, {
         name: 'Paulo',
         data: [100],
@@ -118,11 +119,11 @@ charts = [["Looks1", {chart: {
         name: 'Maddie',
         data: [0, 2000, 8000, -2000,3000,4000,3000,2000,4000,4000],
     }, {
-        name: 'PD',
+        name: 'Paulo',
         data: [1,1,1,1,1,1,1,1,1,1]
     }]
 }]]
 
 charts.each do |c|
-  Chart.create(chart_name: c[0] ,chart_data: c[1].to_json)
+  Chart.create(chart_name: c[0] , chart_data: c[1].to_json)
 end

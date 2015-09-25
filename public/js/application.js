@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   clicable_links();
+  get_stock();
 
 });
 
@@ -51,7 +52,44 @@ function create_chart (click_selector) {
 
 };
 
-
 function reset_charts () {
   $("#graphs").children().hide();
 };
+
+function get_stock () {
+  $("#stocks_form").on("click", "#stocks_button", function(event){
+    event.preventDefault();
+
+    console.log("yay stock");
+
+    var url = $("#stocks_form").attr('action');
+
+    var data = $("#stocks_form").serialize();
+
+    // console.log(url);
+    // console.log(data);
+
+    var request = $.ajax({
+      method: "get",
+      url: url,
+      data: data
+    })
+
+    request.done(function(response){
+
+      var j = JSON.parse(response);
+
+      console.log("done")
+      console.log(j)
+    });
+
+
+    request.fail( function( response ){
+
+      console.log("failure")
+
+    })
+
+
+  })
+}
