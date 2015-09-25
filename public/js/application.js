@@ -77,10 +77,13 @@ function get_stock () {
 
     request.done(function(response){
 
-      var j = JSON.parse(response);
+      // var j = JSON.parse(response);
 
       console.log("done")
-      console.log(j)
+      console.log(response)
+
+      
+
     });
 
 

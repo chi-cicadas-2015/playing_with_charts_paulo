@@ -27,7 +27,8 @@ get '/stocks' do
 
   # @result = temp[:close].to_s # to_s works
 
-  @response = {chart: {type: 'line'},
+
+  @chart = {chart: {type: 'line'},
       title: { text: 'Maddies Meanness Over Time' , size: 30},
       xAxis: {
         # these are column
@@ -41,8 +42,26 @@ get '/stocks' do
             series: [{name: 'Maddie', data: [0, 2000, 8000]},
                      {name: 'Paulo', data: [1,1,1]}
   ]}
-  #
-  @response
+
+
+  @chart.to_s
+
+  # @response = {chart: {type: 'line'},
+  #     title: { text: 'Maddies Meanness Over Time' , size: 30},
+  #     xAxis: {
+  #       # these are column
+  #         title: {text: 'Wooooooo'},
+  #         type: 'datetime',
+  #         categories: ['Jan', 'Feb', 'Mar']
+  #     },
+  #     yAxis: {
+  #       # these are rows
+  #         title: {text: 'Whats up'}},
+  #           series: [{name: 'Maddie', data: [0, 2000, 8000]},
+  #                    {name: 'Paulo', data: [1,1,1]}
+  # ]}
+  # #
+  # @response
   #
   # p @response
 
