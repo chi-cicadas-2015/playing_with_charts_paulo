@@ -1,9 +1,11 @@
 $(document).ready(function() {
 
-  // $("#main_container").on("click", $(this).children(), function (event) {
-  //   console.log('hi');
-  // }
+  clicable_links();
 
+});
+
+
+function clicable_links () {
   $("nav a").on("click", function(){
     console.log($(this).attr("id"));
 
@@ -11,17 +13,8 @@ $(document).ready(function() {
 
     create_chart("#" + id);
 
-
   })
-
-
-  // create_chart("#2");
-  // create_chart("#3");
-  // create_chart("#4");
-  // create_chart("#5");
-
-});
-
+};
 
 function create_chart (click_selector) {
 
